@@ -19,18 +19,17 @@ resource "tls_private_key" "rsa_2048" {
   rsa_bits  = 2048
 }
 
-variable "key_name" {}
 
 # Key pair for AWS
 resource "aws_key_pair" "key_pair" {
-  key_name   = var.key_name
+  key_name   = "portfolio-rsa"
   public_key = tls_private_key.rsa_2048.public_key_openssh
 }
 
 # Create local private key
 resource "local_file" "private_key" {
   content  = tls_private_key.rsa_2048.private_key_pem
-  filename = var.key_name
+  filename = "portfolio-rsa"
 }
 
 # Creating EC2 instance
