@@ -4,3 +4,4 @@ portfolio-rsa
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.lock.hcl
+values.yaml

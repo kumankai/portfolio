@@ -1,0 +1,18 @@
+---
+- name: User module
+  hosts: all
+  become: true
+  tasks:
+    - name: User
+      ansible.builtin.user:
+        name: jacob
+        password: "{{ lookup('env', 'JACOB_PASSWORD') }}"
+        groups:
+          - root
+        state: present
+        shell: "/bin/bash"
+        system: false
+        createhome: true
+        home: "/home/jacob"
+        comment: "User made by Ansible"
+        generate_ssh_key: false
