@@ -1,3 +1,4 @@
+#** NGINX SERVICE MIGRATED TO CONTAINERS **
 ---
 - name: Setup NGINX server
   hosts: all
