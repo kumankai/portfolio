@@ -1,0 +1,11 @@
+run_tests:
+  image: node:22-slim
+  script:
+    - cd app
+    - npm install
+    - npm run test
+
+# build_image:
+#   script:
+#     - cd docker
+#     - docker build -t jangga/portfolio .
